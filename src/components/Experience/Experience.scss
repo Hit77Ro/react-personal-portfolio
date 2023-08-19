@@ -1,0 +1,29 @@
+.experience {
+  &__container {
+    height: 50vh;
+    display: grid;
+    align-items: center;
+    h3 {
+      text-align: center;
+    }
+  }
+  &__content {
+    padding-block: 7rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  &__details {
+    display: grid;
+    background-color: var(--clr-bg-variant);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    grid-template-columns: 25% 1fr;
+    &:hover {
+      background-color: var(--clr-light);
+      border-color: var(--clr-bg-variant);
+    }
+  }
+}
+

@@ -1,0 +1,66 @@
+nav {
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin: auto;
+  position: fixed;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 3rem;
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  padding: 0.7rem 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+nav a {
+  background-color: transparent;
+  padding: 0.9rem;
+  display: flex;
+  color: var(--clr-light);
+  font-size: 1.1rem;
+  border-radius: 50%;
+  position: relative;
+}
+nav a::before {
+  content: attr(data-name);
+  font-size: 10px;
+  position: absolute;
+  top: -100%;
+  border-radius: 5px;
+  background-color: var(--clr-bg-variant);
+  padding: 4px 1rem;
+  left: 50%;
+  transition: var(--transition);
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0;
+  color: var(--clr-primary);
+}
+nav a::after {
+  position: absolute;
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  background-color: var(--clr-white);
+  bottom: -5px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+nav a:hover::before {
+  opacity: 1;
+}
+nav a.active {
+  background: var(--clr-bg);
+  color: var(--clr-white);
+}
+nav a.active::after {
+  content: "";
+}

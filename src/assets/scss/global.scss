@@ -1,0 +1,117 @@
+@use "./reset" as *;
+@use "./theme" as *;
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+:root {
+  --clr-bg: #1f1f38;
+  --clr-bg-variant: #2c2c6c;
+  --clr-primary: #4db5ff;
+  --clr-primary-variant: rgba(#4db5ff, 0.4);
+  --clr-white: #fff;
+  --clr-light: rgba(#fff, 0.6);
+
+  //------------>
+  --container-w-lg: 75%;
+  --container-w-md: 86%;
+  --container-w-sm: 90%;
+
+  //------------->
+  --transition: 0.4s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--clr-bg);
+  font-family: "Popins", sans serif;
+  color: var(--clr-white);
+  line-height: 1.7;
+  background-image: url(../images/bg-texture.png);
+}
+
+.container {
+  width: var(--container-w-lg);
+  padding-inline: 15px;
+  margin-inline: auto;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+h1 {
+  font-size: 2.5rem; //40px
+}
+section {
+  padding-block: 40px;
+  &:not(.w-auto) {
+    min-height: 50vh;
+  }
+  .section__header {
+    margin-bottom: 70px;
+    h2,
+    h5 {
+      text-align: center;
+      color: var(--clr-light);
+    }
+    h2 {
+      color: var(--clr-primary);
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.text-light {
+  color: var(--clr-light);
+}
+a {
+  text-transform: capitalize;
+  color: var(--clr-primary);
+  transition: var(--transition);
+  &:hover {
+    color: var(--clr-white);
+  }
+}
+
+.btn {
+  width: max-content;
+  user-select: none;
+  border: 0.4rem;
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--clr-primary);
+  border-radius: 0.4rem;
+  transition: var(--transition);
+  &:hover {
+    border-color: transparent;
+    color: var(--clr-bg);
+    background-color: var(--clr-primary);
+  }
+  &-primary {
+    background-color: var(--clr-primary);
+    color: var(--clr-bg);
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: var(--container-w-lg);
+  }
+  section > h2 {
+    margin-bottom: 2rem;
+  }
+}

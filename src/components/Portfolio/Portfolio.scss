@@ -1,0 +1,41 @@
+@use "../../assets/scss/mixins" as *;
+.portfolio {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    @include mq(md, "max") {
+      gap: 1rem;
+    }
+  }
+  &__item {
+    display: grid;
+    gap: 1rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-color: var(--clr-bg-variant);
+    border: 1px solid transparent;
+    transition: var(--transition);
+    h3 {
+      font-size: 0.9rem;
+    }
+    &:hover {
+      border-color: var(--clr-primary-transparent);
+      background-color: transparent;
+    }
+
+    &-img {
+      overflow: hidden;
+    }
+    &-btns {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    &-content {
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
+    }
+  }
+}

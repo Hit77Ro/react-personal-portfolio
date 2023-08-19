@@ -1,0 +1,51 @@
+@use "../../assets//scss/mixins" as *;
+.footer {
+  background-color: var(--clr-primary);
+  padding-block: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 7rem;
+  a {
+    color: var(--clr-bg);
+  }
+  &__logo {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .permalinks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 0 auto 3rem;
+    @include mq(sm,"max") { 
+        flex-direction: column;
+    }
+  }
+  &__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    a {
+      padding: 0.6rem 0.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: var(--clr-bg-variant);
+      color: var(--clr-primary);
+      border-radius: 0.4rem;
+      .icon {
+        font-size: 1rem;
+      }
+    }
+  }
+  &__copyright {
+    margin-top: 2rem;
+    color: var(--clr-bg);
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+}

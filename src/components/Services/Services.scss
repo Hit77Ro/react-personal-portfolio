@@ -1,0 +1,46 @@
+.services {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 3rem;
+    .service {
+      background-color: var(--clr-bg-variant);
+      border-radius: 0 0 2rem 2rem;
+      border: 1px solid var(--clr-primary);
+      transition: var(--transition);
+      height: fit-content;
+      &:hover {
+        background-color: transparent;
+        border-color: var(--clr-primary-variant);
+        cursor: default;
+      }
+      &__head {
+        background-color: var(--clr-primary);
+        padding: 2rem;
+        border-radius: 0 0 2rem 2rem;
+        box-shadow: 0 2rem 1rem rgba(black, 0.1);
+        h3 {
+          color: var(--clr-bg);
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+      &__list {
+        padding: 2rem;
+        li {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 1rem;
+        }
+        &-icon {
+          color: var(--clr-primary);
+          margin-top: 2px;
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
